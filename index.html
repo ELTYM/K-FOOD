@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css" media="screen and (min-width: 500px)">
 </head>
 <body>
-    
+    <script src="buttons.js"></script>
+    <script src="data.js"></script>
     <header>
         <nav class="nav">
             <li class="nav-title"> <a href="" class="inicio">Titulo</a> </li>
@@ -21,10 +22,10 @@
                 <h3>Platano</h3>
             </div>
             <div class="container-img ">
-                <img src="/platanos.png" alt="platanos" title="platano xd" class="img-principal">
+                <img src="images/platanos.png" alt="platanos" title="platano xd" class="img-principal">
             </div>
             <div class="sound">
-                <a href="" class="button-sound">Sonido</a>
+                <a href="" class="button-sound"></a>
             </div>
            
             <div class="container-vacio">
@@ -33,11 +34,11 @@
                 </div>
             </div>
             <div class="container-opcion">
-                <a href="" class="button-opcion">Saludable</a>
-                <a href="" class="button-opcion">No Saludable</a>
+                <a href="javascript:click(true)" class="button-opcion" id="buttonH">Saludable</a>
+                <a href="javascript:click(false)" class="button-opcion" id="buttonNH">No Saludable</a>
             </div>
             <div class="container-segute">
-                <a href="" class="button-segute"> sig</a>
+                <a href="javascript:next()" class="button-segute"> </a>
             </div>
         </div>
     </main>

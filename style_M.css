@@ -73,11 +73,14 @@ main .container-img{
 }
 .button-opcion{
     padding: 9px;
-    background-color: #FFC872;
+    background-color: #FFE3B3;
     border-radius: 15%;
     text-decoration: none;
     color: black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button-opcion:hover {
+    background-color: #FFC872;
 }
 .container-opcion{
     display: flex;
@@ -97,10 +100,22 @@ main .container-img{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .indicator{
-    background-color: green;
+    background-color: #D38100;
     width: 80px;
     height: 55px;
     border-radius: 200%; 
+}
+.correct{
+    background-color: #1EC900;
+    width: 80px;
+    height: 55px;
+    border-radius: 200%;
+}
+.incorrect{
+    background-color: #DC1111;
+    width: 80px;
+    height: 55px;
+    border-radius: 200%;
 }
 .container-vacio{
     display: flex;
