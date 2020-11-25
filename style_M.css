@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #BEBEBE;
+}
+header{
+    height: 10vh;
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25vw;
+    margin-right: 25vw; /* provisorio (el centrado de el title y el ayuda)*/
+    margin-top: 3.5vh;
+}
+.help-nav{
+    
+}
+main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+main .container-main{
+    background-color: #FFE3B3;
+    width: 100vw;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: block;
+    justify-content: center;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}
+footer{
+    height: 11vh;
+    background-color: black;
+}
+.container{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+}
+.img-principal{
+    max-width: 100%;
+    max-height: 300px;
+}
+main .container-img{
+    background-color: white;
+    max-height: 30vh;
+    display: flex;
+    justify-content: center;
+}
+.button-segute{
+    margin: 15px;
+    padding: 10px 20px;
+    background-color: #7ACE67;
+    border-radius: 200%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container-segute{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-opcion{
+    padding: 9px;
+    background-color: #FFC872;
+    border-radius: 15%;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container-opcion{
+    display: flex;
+    justify-content: space-around;
+    margin: 25px;
+}
+.sound{
+    display: flex;
+    justify-content: start;
+    margin: 15px;
+}
+.button-sound{
+    background-color: #7ACE67;
+    border-radius: 200%;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.indicator{
+    background-color: green;
+    width: 80px;
+    height: 55px;
+    border-radius: 200%; 
+}
+.container-vacio{
+    display: flex;
+    justify-content: center;
+}
