@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css" media="screen and (min-width: 500px)">
 </head>
 <body>
-    <script src="buttons.js"></script>
-    <script src="data.js"></script>
+    <script type="module" src="data.js" id="data"></script>
+    <script type="module" src="main.js"></script>
     <header>
         <nav class="nav">
             <li class="nav-title"> <a href="" class="inicio">Titulo</a> </li>
@@ -39,6 +39,7 @@
             </div>
             <div class="container-segute">
                 <a href="javascript:next()" class="button-segute"> </a>
+                <div class="counter" id="counter">0</div>
             </div>
         </div>
     </main>

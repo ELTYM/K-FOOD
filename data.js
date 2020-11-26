@@ -1,4 +1,4 @@
-Alimentos = [
+export let Alimentos = [
     {
         "Nombre": "Platano",
         "Health": true,
@@ -15,7 +15,3 @@ Alimentos = [
 
     }
 ]
-
-module.exports = {
-    Alimentos
-}
