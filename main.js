@@ -1,31 +1,50 @@
-import {Alimentos} from "./data.js";
+let Alimentos = [
+    {
+        "Nombre": "Platano",
+        "Health": true,
+        "Imagen": "images/platanos.png",
+        "Audio": "",
+        "Indice": 0
+    }, {
+        "Nombre": "Manzana",
+        "Health": true,
+        "Imagen": "images/manzana.jpeg",
+        "Audio": "",
+        "Indice": 1
+    }, {
+
+    }
+]
 
 function click(condition) {
     let h = document.getElementsByClassName("container-vacio")[0];
-    let index = document.getElementsByClassName("container-segute")[1].value;
+    let index = document.getElementsByClassName("counter")[0].id;
     let actual = Alimentos[index];
     let salida;
     if (condition) {
         if (actual.Health) {
-            salida = "correct";
+            salida = '"correct"';
         } else {
-            salida = "incorrect";
+            salida = '"incorrect"';
         }
     } else {
         if (actual.Health) {
-            salida = "incorrect";
+            salida = '"incorrect"';
         } else {
-            salida = "correct";
+            salida = '"correct"';
         }
     }
-    h.class = salida;
+    h.innerHTML = '<div class=' + salida + '> </div>';
 }
 
 function next() {
-    let index = document.getElementsByClassName("container-segute")[1].value;
+    let index = document.getElementsByClassName("counter")[0].id;
+    index = parseInt(index, 10);
     let actual = Alimentos[index + 1];
-    document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre+ '</h3>';
-    document.getElementsByClassName("container-img")[0].src = actual.Imagen;
-    document.getElementsByClassName("container-vacio")[0].class = "indicator";
-    document.getElementsByClassName("container-segute")[1].innerHTML = '<div class="counter" id="counter">' + (index + 1) + '</div>';
+    if (index < Alimentos.length){
+        document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre + '</h3>';
+        document.getElementsByClassName("img-principal")[0].src = actual.Imagen;
+        document.getElementsByClassName("container-vacio")[0].innerHTML = '<div class="indicator"> </div>';
+        document.getElementsByClassName("counter")[0].id = '' + index + '';
+    }
 }
