@@ -23,6 +23,10 @@ header{
 .help-nav{
     
 }
+.hola{
+    padding: 10px;
+    background-color: black;
+}
 main{
     min-height: 80vh;
     display: flex;
