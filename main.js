@@ -3,16 +3,14 @@ let Alimentos = [
         "Nombre": "Platano",
         "Health": true,
         "Imagen": "images/platanos.png",
-        "Audio": "",
-        "Indice": 0
+        "Audio": ""
     }, {
         "Nombre": "Manzana",
         "Health": true,
         "Imagen": "images/manzana.jpeg",
-        "Audio": "",
-        "Indice": 1
+        "Audio": ""
     }
-]
+];
 
 function click(condition) {
     let h = document.getElementsByClassName("container-vacio")[0];
