@@ -133,3 +133,6 @@ main .container-img{
     display: flex;
     justify-content: center;
 }
+.counter{
+    opacity: 0;
+}
