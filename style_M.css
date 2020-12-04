@@ -110,3 +110,10 @@ main .container-img{
     display: flex;
     justify-content: center;
 }
+p small{
+    color: white;
+}
+.container-footer{
+    display: flex;
+    justify-content: center;
+}
