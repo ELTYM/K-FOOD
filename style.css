@@ -1,5 +1,12 @@
+html{
+    font-size: 17px;
+}
 header{
     height: 9vh;
+}
+.bodyPop{
+    width: 45vw;
+    margin-top: 15%;
 }
 .help-nav{
     position: absolute;

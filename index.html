@@ -9,17 +9,34 @@
 </head>
 <body>
     <script src="main.js"></script>
-    <header>
+    <header >
         <nav class="nav">
-            <li class="nav-title"> <a href="" class="inicio">Titulo</a> </li>
+            <li class="nav-title"> <a href="#title" class="inicio">Titulo</a> </li>
             <li class="help-nav"><a href="" class="button-help">Ayuda</a></li>
         </nav>
     </header>
-    <main>
+    <main id="title">
         <div class="container-main">
             <div class="container">
                 <h3 id="parrafo">Platano</h3>
             </div>
+            <!-- Pop de prueba-->
+            <div id="popup" class="overlay">
+                <div class="bodyPop">
+                    <h3>Aqui va el pop</h3>
+                    <a href=""></a>
+                    <div class="contentPop">
+                        <p>Dificultad</p>
+                        <div class="dificultad">
+                            <!-- Botones de dificultad-->
+                            <a href="#popup" class="button-d">Facil</a>
+                            <a href="#popup" class="button-d">Intermedio</a>
+                            <a href="#popup" class="button-d">Dificil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN POP -->
             <div class="container-img">
                 <img src="images/platanos.png" alt="platanos" title="platano xd" class="img-principal" id="img-principal">
             </div>
