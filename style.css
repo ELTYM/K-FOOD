@@ -38,6 +38,14 @@ main .container-main{
     width: 100px;
     height: 65px;
 }
+.correct{
+    width: 100px;
+    height: 65px;
+}
+.incorrect{
+    width: 100px;
+    height: 65px;
+}
 .container-opcion{
     display: flex;
     justify-content: space-around;

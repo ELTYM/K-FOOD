@@ -20,13 +20,6 @@ header{
     margin-right: 25vw; /* provisorio (el centrado de el title y el ayuda)*/
     margin-top: 3.5vh;
 }
-.help-nav{
-    
-}
-.hola{
-    padding: 10px;
-    background-color: black;
-}
 main{
     min-height: 80vh;
     display: flex;
@@ -70,6 +63,12 @@ main .container-img{
     background-color: #7ACE67;
     border-radius: 200%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+.icon{
+    width: 25px;
+    height: 25px;
 }
 .container-segute{
     display: flex;
@@ -77,11 +76,14 @@ main .container-img{
 }
 .button-opcion{
     padding: 9px;
-    background-color: #FFC872;
+    background-color: #FFE3B3;
     border-radius: 15%;
     text-decoration: none;
     color: black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button-opcion:hover {
+    background-color: #FFC872;
 }
 .container-opcion{
     display: flex;
@@ -99,21 +101,38 @@ main .container-img{
     padding: 5px;
     text-decoration: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
 }
 .indicator{
-    background-color: green;
+    background-color: #D38100;
     width: 80px;
     height: 55px;
     border-radius: 200%; 
+    display: flex;
+    justify-content: center;
+}
+.img-icon{
+    margin-top: 7px;
+    height: 50px;
+    width: 40px;
+}
+.correct{
+    background-color: #1EC900;
+    width: 80px;
+    height: 55px;
+    border-radius: 200%;
+}
+.incorrect{
+    background-color: #DC1111;
+    width: 80px;
+    height: 55px;
+    border-radius: 200%;
 }
 .container-vacio{
     display: flex;
     justify-content: center;
 }
-p small{
-    color: white;
-}
-.container-footer{
-    display: flex;
-    justify-content: center;
+.counter{
+    opacity: 0;
 }
