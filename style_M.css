@@ -6,7 +6,7 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #BEBEBE;
-    font-size: x-small;
+    font-size: 20px;
 }
 .overlay{
     position: fixed;
