@@ -217,3 +217,40 @@ main .container-img{
 .difficult{
     opacity: 0;
 }
+ul{
+    list-style: none;
+}
+.dif > li{
+    float: right;
+}
+.dif li a {
+    background-color:green;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+    border-radius: 10px;
+    color: white;
+}
+.dif li a:hover {
+    background-color:#434343;
+}
+
+.dif li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.dif li:hover > ul {
+    display:block;
+}
+
+.dif li ul li {
+    position:relative;
+}
+
+.dif li ul li ul {
+    right:-140px;
+    top:0px;
+}
