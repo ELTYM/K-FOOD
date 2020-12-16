@@ -217,6 +217,9 @@ main .container-img{
 .difficult{
     opacity: 0;
 }
+.puntaje {
+    opacity: 0;
+}
 ul{
     list-style: none;
 }

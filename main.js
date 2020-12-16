@@ -100,17 +100,20 @@ let Alimentos = [
         "Imagen": "https://www.bachillerato.uchile.cl/wp-content/uploads/2019/07/f155946-1-h.jpeg",
         "Audio": "hola"
     }
-    
 ];
+
+let used = [];
 
 function click(condition) {
     let h = document.getElementsByClassName("container-vacio")[0];
     let index = document.getElementsByClassName("counter")[0].id;
     let actual = Alimentos[index];
+    let puntaje = document.getElementsByClassName("puntaje")[0].innerHTML;
     let salida;
     if (condition) {
         if (actual.Health) {
             salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
         } else {
             salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
         }
@@ -119,33 +122,39 @@ function click(condition) {
             salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
         } else {
             salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
         }
     }
     h.innerHTML = salida;
 }
 
 function next() {
-    let index = document.getElementsByClassName("counter")[0].id;
     let difficult = document.getElementsByClassName("difficult")[0].innerHTML;
-    index = parseInt(index, 10);
-    if (index + 1< Alimentos.length) {
-        let actual = Alimentos[index + 1];
-        document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre + '</h3>';
-        document.getElementsByClassName("img-principal")[0].src = actual.Imagen;
-        document.getElementsByClassName("container-vacio")[0].innerHTML = '<div class="indicator"> </div>';
-        document.getElementsByClassName("counter")[0].id = '' + (index + 1) + '';
-        document.getElementsByClassName("difficult")[0].innerHTML = '' + (parseInt(difficult) - 1) + '';
-        setTimeout(speech, 800);
+    if (difficult > 0) {
+        let index = Math.floor(Math.random()*19 + 0)
+        if (!(index in used)) {
+            let actual = Alimentos[index + 1];
+            document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre + '</h3>';
+            document.getElementsByClassName("img-principal")[0].src = actual.Imagen;
+            document.getElementsByClassName("container-vacio")[0].innerHTML = '<div class="indicator"> </div>';
+            document.getElementsByClassName("counter")[0].id = '' + (index + 1) + '';
+            document.getElementsByClassName("difficult")[0].innerHTML = '' + (parseInt(difficult, 10) - 1) + '';
+            used.push(index);
+            setTimeout(speech, 800);
+        }
     } else {
+        let goods = document.getElementsByClassName("puntaje")[0].innerHTML;
+        goods = parseInt(goods,10 );
         document.getElementsByClassName("container-main")[0].innerHTML = '<div class="container-title">\n' +
             '                <img src="img_pag/Escudo-UCN-Full-Color.png" alt="Titulo de prueba" class="img-principal">\n' +
             '            </div>\n' +
             '            <div class="container-vacio">\n' +
-            '                <h3>Puntaje:</h3>\n' +
+            '                <h3>Puntaje: ' + (goods * 50)+'</h3>\n' +
             '            </div>\n' +
             '            <div class="container-vacio">\n' +
-            '                <a href="inicio.html" class="button-volver">Volver al inicio</a>\n' +
+            '                <a href="javascript:end()" class="button-volver">Volver al inicio</a>\n' +
             '            </div>';
+        used = [];
     }
 }
 
@@ -166,11 +175,8 @@ function start(difficult){
     contain.innerHTML = '<div class="container">\n' +
         '                <h3 id="parrafo">Platano</h3>\n' +
         '            </div>\n' +
-        '            <!-- Pop de prueba-->\n' +
-        '            \n' +
-        '            <!-- FIN POP -->\n' +
         '            <div class="container-img">\n' +
-        '                <img src="images/platanos.png" alt="platanos" title="platano xd" class="img-principal" id="img-principal">\n' +
+        '                <img src="https://static2.abc.es/media/bienestar/2019/07/25/platano-beneficios-kIyF--620x349@abc.jpg" alt="platanos" title="platano xd" class="img-principal" id="img-principal">\n' +
         '            </div>\n' +
         '            <div class="sound">\n' +
         '                <a href="javascript:speech()" class="button-sound"><img src="img_pag/audio.png" alt="" class="icon"></a>\n' +
@@ -189,5 +195,24 @@ function start(difficult){
         '                <a href="javascript:next()" class="button-segute"><img src="img_pag/sig.png" alt="" class="icon"> </a>\n' +
         '                <div class="counter" id="0"></div>\n' +
         '                <div class="difficult">' + difficult + '</div>\n' +
+        '                <div class="puntaje">0</div>\n' +
+        '            </div>';
+    next();
+}
+
+function end() {
+    document.getElementsByClassName("container-main")[0].innerHTML = '<div class="container-title">\n' +
+        '                <img src="img_pag/Escudo-UCN-Full-Color.png" alt="Titulo de prueba" class="img-principal">\n' +
+        '            </div>\n' +
+        '            <div class="container-vacio">\n' +
+        '                <ul class="dif">\n' +
+        '                    <li><a>Start</a>\n' +
+        '                        <ul>\n' +
+        '                            <li><a href="javascript:start(5)">Facil</a></li>\n' +
+        '                            <li><a href="javascript:start(8)">Intermedio</a></li>\n' +
+        '                            <li><a href="javascript:start(13)">Dificil</a></li>\n' +
+        '                        </ul>\n' +
+        '                    </li>\n' +
+        '                </ul>\n' +
         '            </div>';
 }
