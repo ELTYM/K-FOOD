@@ -102,8 +102,6 @@ let Alimentos = [
     }
 ];
 
-let used = [];
-
 function click(condition) {
     let h = document.getElementsByClassName("container-vacio")[0];
     let index = document.getElementsByClassName("counter")[0].id;
@@ -126,22 +124,57 @@ function click(condition) {
         }
     }
     h.innerHTML = salida;
+    // Bloqueo de botones S y NS
+    document.getElementsByClassName('button-opcion')[0].style.cssText = 'pointer-events: none; cursor: none; ';
+    document.getElementsByClassName('button-opcion')[1].style.cssText = 'pointer-events: none; cursor: none; ';
+    //desbloqueo del Next
+    document.getElementsByClassName('button-segute')[0].style.cssText = 'pointer-events: auto; cursor: auto; ';
+    
+    
 }
 
+let used = [];
+
+function valid(used) {
+    let index = Math.floor(Math.random()*19 + 0);
+    console.log("tamano: " + used.length);
+    let cond = true;
+    if(used.length > 0){
+        while(cond){
+            if (used.includes(index)){
+                console.log("Repetida: " + index in used);
+                index = Math.floor(Math.random()*19 + 0);  
+            }else{
+                cond = false;
+                used.push(index);
+            }
+        }
+    }else{
+        used[0] = index;
+    }
+    return index;
+}
+let cl = 0;
 function next() {
+    /// desbloqueo de botones S y NS
+    document.getElementsByClassName('button-opcion')[0].style.cssText = 'pointer-events: auto; cursor: auto; ';
+    document.getElementsByClassName('button-opcion')[1].style.cssText = 'pointer-events: auto; cursor: auto; ';
+    ///bloqueo next
+    document.getElementsByClassName('button-segute')[0].style.cssText = 'pointer-events: none; cursor: auto; display: none;';
+    //
     let difficult = document.getElementsByClassName("difficult")[0].innerHTML;
     if (difficult > 0) {
-        let index = Math.floor(Math.random()*19 + 0)
-        if (!(index in used)) {
-            let actual = Alimentos[index + 1];
-            document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre + '</h3>';
-            document.getElementsByClassName("img-principal")[0].src = actual.Imagen;
-            document.getElementsByClassName("container-vacio")[0].innerHTML = '<div class="indicator"> </div>';
-            document.getElementsByClassName("counter")[0].id = '' + (index + 1) + '';
-            document.getElementsByClassName("difficult")[0].innerHTML = '' + (parseInt(difficult, 10) - 1) + '';
-            used.push(index);
-            setTimeout(speech, 800);
-        }
+        
+        let index = valid(used);
+        
+        let actual = Alimentos[index + 1];
+        document.getElementsByClassName("container")[0].innerHTML = '<h3>' + actual.Nombre + '</h3>';
+        document.getElementsByClassName("img-principal")[0].src = actual.Imagen;
+        document.getElementsByClassName("container-vacio")[0].innerHTML = '<div class="indicator"> </div>';
+        document.getElementsByClassName("counter")[0].id = '' + (index + 1) + '';
+        document.getElementsByClassName("difficult")[0].innerHTML = '' + (parseInt(difficult, 10) - 1) + '';
+        setTimeout(speech, 800);
+        
     } else {
         let goods = document.getElementsByClassName("puntaje")[0].innerHTML;
         goods = parseInt(goods,10 );
@@ -154,7 +187,6 @@ function next() {
             '            <div class="container-vacio">\n' +
             '                <a href="javascript:end()" class="button-volver">Volver al inicio</a>\n' +
             '            </div>';
-        used = [];
     }
 }
 
@@ -172,6 +204,7 @@ function speech() {
 
 function start(difficult){
     contain = document.getElementsByClassName("container-main")[0];
+    
     contain.innerHTML = '<div class="container">\n' +
         '                <h3 id="parrafo">Platano</h3>\n' +
         '            </div>\n' +
