@@ -102,6 +102,8 @@ let Alimentos = [
     }
 ];
 
+
+
 function click(condition) {
     let h = document.getElementsByClassName("container-vacio")[0];
     let index = document.getElementsByClassName("counter")[0].id;
@@ -112,17 +114,22 @@ function click(condition) {
         if (actual.Health) {
             salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
             document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
+            score.push(true);
         } else {
             salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            score.push(false);
         }
     } else {
         if (actual.Health) {
             salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            score.push(false);
         } else {
             salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
             document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
+            score.push(true);
         }
     }
+    console.log(score);
     h.innerHTML = salida;
     // Bloqueo de botones S y NS
     document.getElementsByClassName('button-opcion')[0].style.cssText = 'pointer-events: none; cursor: none; ';
@@ -132,8 +139,9 @@ function click(condition) {
     
     
 }
-
+let score = [];
 let used = [];
+
 
 function valid(used) {
     let index = Math.floor(Math.random()*19 + 0);
@@ -154,7 +162,25 @@ function valid(used) {
     }
     return index;
 }
-let cl = 0;
+
+function bad() {
+    let salida = "";
+    if((score.findIndex(element => element == false)) >= 0){
+        salida = '<div class="container-respuestas">\n'+'<h4>Respuestas incorrectas:</h4>\n';
+        for(let i = 0; i < used.length; i++){
+            if(score[i] == false){
+                let list = Alimentos[used[i]+1];
+                salida +='<h4> -'+ list.Nombre +'</h4>\n';
+            }
+        }
+        salida += '<h4>Sigue mejorando!!!</h4>\n' + '</div>';
+    }else{
+        salida = '<div class="container-respuestas">\n'+'<h4>Muy bien, sigue asi.</h4>\n' + '</div>';
+    }
+    
+    document.getElementsByClassName("container-vacio")[1].innerHTML = salida;
+}
+
 function next() {
     /// desbloqueo de botones S y NS
     document.getElementsByClassName('button-opcion')[0].style.cssText = 'pointer-events: auto; cursor: auto; ';
@@ -184,11 +210,15 @@ function next() {
             '            <div class="container-vacio">\n' +
             '                <h3>Puntaje: ' + (goods * 50)+'</h3>\n' +
             '            </div>\n' +
+            '            <div class="container-vacio">\n' + 
+            '            </div>\n' + 
             '            <div class="container-vacio">\n' +
             '                <a href="javascript:end()" class="button-volver">Volver al inicio</a>\n' +
             '            </div>';
+            bad()
     }
 }
+
 
 function speech() {
     let speech = new SpeechSynthesisUtterance();
@@ -234,6 +264,8 @@ function start(difficult){
 }
 
 function end() {
+    score.length = 0;
+    used.length = 0;
     document.getElementsByClassName("container-main")[0].innerHTML = '<div class="container-title">\n' +
         '                <img src="img_pag/Escudo-UCN-Full-Color.png" alt="Titulo de prueba" class="img-principal">\n' +
         '            </div>\n' +
