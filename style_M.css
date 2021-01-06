@@ -5,8 +5,9 @@
 }
 html{
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#f8f8f8;
-    font-size: 20px;
+    background-image: url('images/banner.png');
+    background-size: 65%;
+    font-size: 100%;
 }
 /*
 .overlay{
@@ -75,12 +76,20 @@ header{
     background-color: #a93f2b;
     width: 100%;
 }
+
+.buttonStar{
+    height: 5vh;
+    width: 9.2vw;
+    min-width: 140px;
+}
+
 .nav{
     display: flex;
     justify-content: space-between;
     margin-left: 25vw;
     margin-right: 25vw; /* provisorio (el centrado de el title y el ayuda)*/
     margin-top: 3.5vh;
+    list-style: none;
 }
 main{
     min-height: 86vh;
