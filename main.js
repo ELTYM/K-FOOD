@@ -207,6 +207,7 @@ function next() {
     document.getElementsByClassName('button-segute')[0].style.cssText = 'pointer-events: none; cursor: auto; display: none;';
     //
     let difficult = document.getElementsByClassName("difficult")[0].innerHTML;
+    window.speechSynthesis.cancel();
     if (difficult > 0) {
         
         let index = valid(used);
