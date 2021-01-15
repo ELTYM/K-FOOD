@@ -46,10 +46,14 @@ main .container-main{
     height: 65px;
 }
 .correct{
+    display: flex;
+    justify-content: center;
     width: 100px;
     height: 65px;
 }
 .incorrect{
+    display: flex;
+    justify-content: center;
     width: 100px;
     height: 65px;
 }
