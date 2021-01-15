@@ -2,102 +2,102 @@ let Alimentos = [
     {
         "Nombre": "Plátano",
         "Health": true,
-        "Imagen": "https://static2.abc.es/media/bienestar/2019/07/25/platano-beneficios-kIyF--620x349@abc.jpg",
+        "Imagen": "images/platanos.png",
         "Audio": "Nos entrega vitaminas y minerales para el correcto funcionamiento de nuestro cuerpo"
     }, {
         "Nombre": "Manzana",
         "Health": true,
-        "Imagen": "https://estaticos.miarevista.es/media/cache/1140x_thumb/uploads/images/gallery/59144d795cafe812663c986a/razonescomermanzana-int.jpg",
+        "Imagen": "images/manzana.jpeg",
         "Audio": "Nos entrega vitaminas y minerales necesarias para crecer sanos y fuertes"
     },{
         "Nombre": "Hamburguesa",
         "Health": false,
-        "Imagen":"https://www.bolsaytrading.com/wp-content/uploads/2018/06/%C3%8Dndice-Big-Mac-2.jpg",
+        "Imagen":"images/hamburgesa.jpg",
         "Audio": "Contiene grasa dañina para la salud de tu corazón"
     },{
         "Nombre": "Pizza",
         "Health": false,
-        "Imagen": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg",
+        "Imagen": "images/pizza.jpg",
         "Audio": "Si lo consumes en exceso puede provocar obesidad"
     },{
         "Nombre": "Porotos",
         "Health": true,
-        "Imagen": "https://cl-mycooktouch.group-taurus.com/image/recipe/545x395/porotos-con-riendas",
+        "Imagen": "images/porotos.jpg",
         "Audio": "Nos entrega fibra para mejorar tu digestión"
     },{
         "Nombre": "Leche",
         "Health": true,
-        "Imagen": "https://dam.cocinafacil.com.mx/wp-content/uploads/2019/06/Leche-descremada-3.jpg",
+        "Imagen": "images/leche.jpg",
         "Audio": "Fortalece tus huesos y dientes"
     },{
         "Nombre": "Tomate",
         "Health": true,
-        "Imagen": "https://www.semana.com/resizer/vnHkfJBtuzoE6EdMt0DvM8r2tXA=/960x540/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/semana/UGEQV4FXHZBRRKOEY7WTKS7PHM.jpg",
+        "Imagen": "images/tomates.jpg",
         "Audio": "Posee vitaminas, minerales y fibra para evitar enfermedades"
     },{
         "Nombre": "Pescado",
         "Health": true,
-        "Imagen": "https://www.hola.com/imagenes/cocina/tecnicas-de-cocina/20200525168569/tecnica-pescado-plancha/0-827-34/pescado-plancha-t.jpg",
+        "Imagen": "images/pescado.jpg",
         "Audio": "Poseen grasas beneficiosas para la salud de tu corazón"
     },{
         "Nombre": "Avena",
         "Health": true,
-        "Imagen": "https://cdn.pixabay.com/photo/2017/09/22/10/21/oat-2775006_1280.jpg",
+        "Imagen": "images/avena.jpg",
         "Audio": "Te entrega energía para desarrollar tus actividades diarias"
     },{
         "Nombre": "Huevo",
         "Health": true,
-        "Imagen": "https://c.files.bbci.co.uk/16E5/production/_108916850_gettyimages-157603551.jpg",
+        "Imagen": "images/huevo.jpg",
         "Audio": "Contienen proteínas necesarias para tu crecimiento y desarrollo"
     },{
         "Nombre": "Papas fritas",
         "Health": false,
-        "Imagen": "https://s1.eestatic.com/2015/03/10/cocinillas/Cocinillas_17008413_127305534_854x640.jpg",
+        "Imagen": "images/papasfritas.jpg",
         "Audio": "Contienen grasas que dañan tu corazón"
     },{
         "Nombre": "Carne",
         "Health": true,
-        "Imagen": "https://i.ytimg.com/vi/tU_xb-907NA/maxresdefault.jpg",
+        "Imagen": "images/carne.jpg",
         "Audio": "Contienen proteínas que te ayudan a crecer sano y fuerte"
     },{
         "Nombre": "Pan",
         "Health": true,
-        "Imagen": "https://www.196flavors.com/wp-content/uploads/2016/03/pan-marraqueta-1-FP.jpg",
+        "Imagen": "images/pan.jpg",
         "Audio": "Nos entrega energía para tus actividades diarias, no lo debes consumir en exceso"
     },{
         "Nombre": "Completo",
         "Health": false,
-        "Imagen": "https://comidaschilenas.com/wp-content/uploads/2019/02/Receta-del-completo-italiano.jpg",
+        "Imagen": "images/completos.jpg",
         "Audio": "Contiene grasa, colesterol y sodio perjudicial para tu crecimiento y desarrollo"
     },{
         "Nombre": "Galletas",
         "Health": false,
-        "Imagen": "https://cdn.kiwilimon.com/recetaimagen/28774/th5-640x426-29249.png",
+        "Imagen": "images/galletas.jpg",
         "Audio": "Si lo consumes en exceso puede provocar obesidad y enfermedades como diabetes"
     },{
         "Nombre": "Chocolate",
         "Health": false,
-        "Imagen": "https://s03.s3c.es/imag/_v0/770x420/d/2/c/Chocolates.jpg",
+        "Imagen": "images/chocolate.jpg",
         "Audio": "Contiene azúcar que no tiene ningún beneficio para tu salud"
     },{
         "Nombre": "Golosinas",
         "Health": false,
-        "Imagen": "https://www.leotertenerife.com/wp-content/uploads/2019/08/Depositphotos_32891271_l-2015.jpg",
+        "Imagen": "images/golosina.jpg",
         "Audio": "Su consumo puede generar la aparición de caries en tus dientes"
     },{
         "Nombre": "Bebida",
         "Health": false,
-        "Imagen": "https://www.distribuidoralasvertientes.cl/wp-content/uploads/2017/05/DistribuidoraLasVertientes-Bebida15L-Desechable.png",
+        "Imagen": "images/bebida.jpg",
         "Audio": "Contiene azúcar, sodio y colorantes perjudiciales para tu salud"
     },{
         "Nombre": "Brócoli",
         "Health": true,
-        "Imagen": "https://elpoderdelconsumidor.org/wp-content/uploads/2016/11/brocoli.jpg",
+        "Imagen": "images/brocoli.jpg",
         "Audio": "te entrega vitaminas y minerales para un correcto funcionamiento de tu cuerpo"
     },{
         "Nombre": "Queso",
         "Health": false,
-        "Imagen": "https://www.bachillerato.uchile.cl/wp-content/uploads/2019/07/f155946-1-h.jpeg",
+        "Imagen": "images/queso.jpg",
         "Audio": "Posee grasa y sodio dañina para tu salud. Su consumo en exceso puede provocar enfermedades"
     }
 ];
