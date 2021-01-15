@@ -52,7 +52,7 @@ let Alimentos = [
     },{
         "Nombre": "Papas fritas",
         "Health": false,
-        "Imagen": "images/papasfritas.jpg",
+        "Imagen": "images/papafritas.jpg",
         "Audio": "Contienen grasas que dañan tu corazón"
     },{
         "Nombre": "Carne",
@@ -109,35 +109,53 @@ function click(condition) {
     let index = document.getElementsByClassName("counter")[0].id;
     let actual = Alimentos[index];
     let puntaje = document.getElementsByClassName("puntaje")[0].innerHTML;
-    let salida;
     if (condition) {
         if (actual.Health) {
-            salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            h.innerHTML = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            input = h.getElementsByClassName("correct")[0];
+            input.classList.add('s-input-right');
+            let x = setInterval(() =>{
+                input.classList.remove('s-input-right');
+                clearInterval(x);
+            }, 900);
             document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
             score.push(true);
         } else {
-            salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            h.innerHTML = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            input = h.getElementsByClassName("incorrect")[0];
+            input.classList.add('s-input-error');
+            let x = setInterval(() =>{
+                input.classList.remove('s-input-error');
+                clearInterval(x);
+            }, 900);
             score.push(false);
         }
     } else {
         if (actual.Health) {
-            salida = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            h.innerHTML = '<div class="incorrect">\n <img src="img_pag/false.png" alt="" id="true-false" class="img-icon">\n </div>';
+            input = h.getElementsByClassName("incorrect")[0];
+            input.classList.add('s-input-error');
+            let x = setInterval(() =>{
+                input.classList.remove('s-input-error');
+                clearInterval(x);
+            }, 900);
             score.push(false);
         } else {
-            salida = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            h.innerHTML = '<div class="correct">\n <img src="img_pag/true.png" alt="" id="true-false" class="img-icon">\n </div>';
+            input = h.getElementsByClassName("correct")[0];
+            input.classList.add('s-input-right');
+            let x = setInterval(() =>{
+                input.classList.remove('s-input-right');
+                clearInterval(x);
+            }, 900);
             document.getElementsByClassName("puntaje")[0].innerHTML = '' + (parseInt(puntaje, 10) + 1) + '';
             score.push(true);
         }
     }
     console.log(score);
-    h.innerHTML = salida;
-    // Bloqueo de botones S y NS
     document.getElementsByClassName('button-opcion')[0].style.cssText = 'pointer-events: none; cursor: none; ';
     document.getElementsByClassName('button-opcion')[1].style.cssText = 'pointer-events: none; cursor: none; ';
-    //desbloqueo del Next
     document.getElementsByClassName('button-segute')[0].style.cssText = 'pointer-events: auto; cursor: auto; ';
-    
-    
 }
 let score = [];
 let used = [];
