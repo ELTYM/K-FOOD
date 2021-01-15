@@ -9,45 +9,6 @@ html{
     background-size: 65%;
     font-size: 100%;
 }
-/*
-.overlay{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: visible;
-    opacity: 1;
-}
-.overlay:target{
-    visibility: hidden;
-    opacity: 0;
-}                                                     gg No borrar pls
-.bodyPop{
-    width: 70vw;
-    padding: 2%;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 0 5px #CCC;
-    position: relative;
-    margin: 20% auto;
-    transition: all 5s ease-in-out;
-}
-.dificultad{
-    display: flex;
-    justify-content: center;
-}
-.button-d{
-    padding: 5%;
-    margin: 5px;
-    background-color: rgb(255, 196, 0);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 200ms;
-}
-*/
 select{
     background-color: #33ff4e;
     height: 30px;
@@ -78,6 +39,7 @@ header{
 }
 
 .buttonStar{
+    text-align: center;
     height: 5vh;
     width: 9.2vw;
     min-width: 140px;
@@ -116,6 +78,9 @@ main{
 li a{
     color: white;
     text-decoration: none;
+    width: 9.2vw;
+    min-width: 140px;
+    text-align: center;
 }
 footer{
     height: 5vh;
@@ -207,12 +172,16 @@ main .container-img{
     width: 40px;
 }
 .correct{
+    display: flex;
+    justify-content: center;
     background-color: #1EC900;
     width: 80px;
     height: 55px;
     border-radius: 200%;
 }
 .incorrect{
+    display: flex;
+    justify-content: center;
     background-color: #DC1111;
     width: 80px;
     height: 55px;
